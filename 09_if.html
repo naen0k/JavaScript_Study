@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age = prompt("나이를 입력하세요 : ");
+        let money = 0;
+        if(age) { // age가 존재하면
+            if (age <= 6 || age >= 70) {
+                money = "무료";
+            } else if (age < 12) {
+                money = "450원";
+            } else if (age < 18) {
+                money = "700원";
+            } else {
+                money = "1000원";
+            }
+            console.log("지불해야할 버스 요금은 "+money+"입니다.");
+        } else {
+            console.log("나이가 입력되지 않았습니다.");
+        }
+        
+        
+    </script>
+</body>
+</html>
