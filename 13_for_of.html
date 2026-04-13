@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for ~ of : 배열, 문자열에서 많이 사용
+        let brands = [
+        "애플",
+        "구글",
+        "마이크로소프트",
+        "삼성",
+        "아마존",
+        "테슬라",
+      ];
+
+      // 1. 배열
+      for (const brand of brands) {
+        console.log(brand);
+      }
+
+      // 2. 문자열
+      let lang = "JavaScript";
+      for(const char of lang) {
+        console.log(char);
+      }
+
+      let nums = 998475037;
+      // 방법1 : 형변환
+      for(const num of String(nums)) {
+        console.log(num);
+      }
+      // 방법2 : toString()
+      for(const num of nums.toString()) {
+        console.log(num);
+      }
+      // 방법3 : toString()을 활용해서 새 변수 만들기
+      let numToStr = nums.toString;
+      for(const num of numToStr) {
+        console.log(num);
+      }
+    </script>
+</body>
+</html>
