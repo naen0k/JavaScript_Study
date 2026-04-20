@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // String 내장 함수
+      // 1. 속성(property) : length
+
+      let str = "Welcome Seoul";
+      console.log(str.length); // index = 0 ~ 12
+
+      // 2. indexOf(대상, 시작 위치) : 찾고자 하는 문자열의 시작 인덱스 리턴(여러개라면 첫 문자열)
+      // 찾고자 하는 대상이 없으면 리턴은 -1
+      console.log(str.indexOf("Seoul"));
+      str = "Welcome Seoul Seoul";
+      console.log(str.indexOf("Seoul", 9));
+      console.log(str.indexOf("Jeju")); // -1
+
+      // 활용 : 전화번호 입력 시 - 없이 입력 => -이 있다면 에러 메세지 출력
+      let tel = "010-0000-0000";
+      if (tel.indexOf("-") !== -1) {
+        console.log("- 없이 다시 입력해 주세요");
+      } else {
+        console.log("전화번호가 성공적으로 입력되었습니다");
+      }
+
+      // 3. lastIndexOf() : 뒤에서부터 문자열을 찾아서 리턴(여러개라면 첫 문자열)
+      console.log(str.lastIndexOf("Seoul"));
+
+      // 4. slice() : 문자열을 (시작위치, 마지막 위치 - 1) 만큼 잘라내기
+      str = "Welcome Seoul";
+      console.log(str.slice(8, 13));
+      console.log(str.slice(8));
+      // Seoul이 어디에 있는지 모른다면
+      console.log(str.slice(str.indexOf("Seoul")));
+      console.log(str.slice(-5)); // Seoul
+      console.log(str.slice(-5, -2)); // Seo (-5, -4, -3)
+
+      // 5. substring() : 문자열을 (시작위치, 마지막위치 -1) 만큼 잘라내기
+      // - 지원 하지 않음 => 0
+      str = "Welcome Seoul";
+      console.log(str.substring(8, 13));
+      console.log(str.substring(8));
+      //console.log(str.substring(-5)); // str.substring(0)
+      //console.log(str.substring(-5, -2)); // 출력 X
+
+      // 6. substr() : 문자열을 (시작위치, 길이) 만큼 잘라내기
+      // 길이를 명확히 아는 경우 매우 효율적 :
+      let nowDate = "20260420";
+      let year = nowDate.substr(0, 4);
+      let month = nowDate.substr(4, 2);
+      let date = nowDate.substr(6, 2);
+      console.log(year, month, date);
+
+      // slice vs substring vs substr
+      /* slice : 가장 유연하고 현대적인 메서드, 음수처리가 가능
+         substring : slice오 유사하지만 인덱스가 음수인 경우 처리가 다르다
+         substr : 인덱스가 아닌 글자 수를 기준으로 하지만 현재 웹표준으로 권장하지 않는다
+      */
+    </script>
+  </body>
+</html>
